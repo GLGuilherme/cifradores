@@ -1,4 +1,3 @@
-var fs = require("fs");
 var readline = require("readline");
 
 var rl = readline.createInterface({
@@ -56,23 +55,25 @@ const decifrar = (key, string) => {
 };
 
 const init = () => {
-  rl.on("line", (data) => {
-    if (process.argv[3] === "-c") {
-      if (process.argv[4] === "-k") {
-        cifrar(
-          parseInt(process.argv[5]),
-          data.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        );
+  if (process.argv[2] === "cesar") {
+    rl.on("line", (data) => {
+      if (process.argv[3] === "-c") {
+        if (process.argv[4] === "-k") {
+          cifrar(
+            parseInt(process.argv[5]),
+            data.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          );
+        }
       }
-    }
 
-    if (process.argv[3] === "-d") {
-      if (process.argv[4] === "-k") {
-        decifrar(parseInt(process.argv[5]), data);
+      if (process.argv[3] === "-d") {
+        if (process.argv[4] === "-k") {
+          decifrar(-parseInt(process.argv[5]), data);
+        }
       }
-    }
-    rl.close();
-  });
+      rl.close();
+    });
+  }
 };
 
 init();
