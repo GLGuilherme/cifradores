@@ -1,19 +1,2 @@
-O Algoritmo Genético (AG) foi proposto por \citeonline{Holland:1975} na Universidade de Michigan. Com o intuito de formalizar um algoritmo, o princípio da pesquisa era fundamentar-se em processos de evolução das espécies e aplicar seus conceitos como, genes, cromossomos, seleção, cruzamento e mutação, para resolver problemas complexos com um amplo espaço de busca. A evolução é um dos princípios fundamentais para um AG e tal princípio possibilita a modificação de uma população de indivíduos (soluções candidatas) até que seja apresentada uma melhor solução. No AG, os indivíduos menos capacitados tendem a ser eliminados da população, enquanto os mais capacitados, possuem maiores chances de sobrevivência e maior possibilidade de reprodução (novas soluções). Por outra forma, para resolver problemas de otimização o AG utiliza os mecanismos da evolução natural das espécies. Os cromossomos em AG, exemplificados na Figura \ref{fig:chromosome}, são a representação das soluções candidatas, onde cada cromossomo pode ser explicado como um vetor de genes. Cada gene é responsável por possuir uma informação, seja ela um número, vetor ou palavra. Quanto a resolução do problema, uma população é representada por um conjunto de cromossomos.
-Chave: 0{
-  '0': 6,
-  '1': 1,
-  '3': 1,
-  '4': 1,
-  '6': 1,
-  '9': 1,
-  '14': 2,
-  '20': 1,
-  '-4': 1,
-  '-10': 1,
-  '-9': 2,
-  '-1': 1,
-  '-7': 1,
-  '-2': 1,
-  '-15': 1,
-  '-14': 1
-}
+O Algoritmo Genetico (AG) foi proposto por \citeonline{Holland:1975} na Universidade de Michigan. Com o intuito de formalizar um algoritmo, o principio da pesquisa era fundamentar-se em processos de evolucao das especies e aplicar seus conceitos como, genes, cromossomos, selecao, cruzamento e mutacao, para resolver problemas complexos com um amplo espaco de busca. A evolucao e um dos principios fundamentais para um AG e tal principio possibilita a modificacao de uma populacao de individuos (solucoes candidatas) ate que seja apresentada uma melhor solucao. No AG, os individuos menos capacitados tendem a ser eliminados da populacao, enquanto os mais capacitados, possuem maiores chances de sobrevivencia e maior possibilidade de reproducao (novas solucoes). Por outra forma, para resolver problemas de otimizacao o AG utiliza os mecanismos da evolucao natural das especies. Os cromossomos em AG, exemplificados na Figura \ref{fig:chromosome}, sao a representacao das solucoes candidatas, onde cada cromossomo pode ser explicado como um vetor de genes. Cada gene e responsavel por possuir uma informacao, seja ela um numero, vetor ou palavra. Quanto a resolucao do problema, uma populacao e representada por um conjunto de cromossomos.
+Chave: 6
