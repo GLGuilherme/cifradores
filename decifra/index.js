@@ -8,35 +8,6 @@ var rl = readline.createInterface({
   terminal: false,
 });
 
-const frequenciaTranslator = {
-  14.63: "A",
-  12.57: "E",
-  10.73: "O",
-  7.81: "S",
-  6.53: "R",
-  6.18: "I",
-  5.05: "N",
-  4.99: "D",
-  4.74: "M",
-  4.63: "U",
-  4.34: "T",
-  3.88: "C",
-  2.78: "L",
-  2.52: "P",
-  1.67: "V",
-  1.3: "G",
-  1.28: "H",
-  1.2: "Q",
-  1.04: "B",
-  1.02: "F",
-  0.47: "Z",
-  0.4: "J",
-  0.21: "X",
-  0.02: "K",
-  0.01: "Y",
-  0.01: "W",
-};
-
 const teste = [
   "A",
   "E",
@@ -66,25 +37,28 @@ const teste = [
   "W",
 ];
 
-const decifra = (value, freqOrder) => {
-  let count = 0;
+const decifrar = (key, string) => {
+  let newString = "";
 
-  for (const key in freqOrder) {
-    if (value.toUpperCase() === key.toUpperCase()) {
-      return teste[count];
+  const calcChar = (char) => {
+    const n = char.charCodeAt(0);
+
+    if (n >= 65 && n <= 90) {
+      return String.fromCharCode(((n - 90 - key) % 26) + 90);
+    } else if (n >= 97 && n <= 122) {
+      return String.fromCharCode(((n - 122 - key) % 26) + 122);
+    } else if (n >= 48 && n <= 57) {
+      return String.fromCharCode(((n - 57 - key) % 10) + 57);
+    } else {
+      return char;
     }
-    count++;
+  };
+
+  for (let i = 0; i < string.length; i++) {
+    newString = newString.concat(calcChar(string[i]));
   }
-  // Object.keys(freqOrder).map((val, index) => {
-  //   if (value === val) {
-  //     return teste[index];
-  //   }
-  // });
-  // for (const key in frequenciaTranslator) {
-  //   if (parseFloat(value) >= parseFloat(key)) {
-  //     return frequenciaTranslator[key];
-  //   }
-  // }
+
+  process.stdout.write(`${newString}\nChave: ${key}`);
 };
 
 const calcFreq = (string) => {
@@ -92,7 +66,9 @@ const calcFreq = (string) => {
 
   const freq = {};
 
-  let newString = "";
+  const freqKey = {};
+
+  var key = 0;
 
   let count = 0;
 
@@ -123,42 +99,22 @@ const calcFreq = (string) => {
     .sort(([, a], [, b]) => b - a)
     .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
 
-  for (let i = 0; i < string.length; i++) {
-    const n = string[i].charCodeAt(0);
-    if (n >= 65 && n <= 90) {
-      newString = newString.concat(
-        // decifra(freq[string[i].toUpperCase()] || freq[string[i].toLowerCase()])
-        decifra(string[i], freqOrder)
-      );
-    } else if (n >= 97 && n <= 122) {
-      newString = newString.concat(
-        // decifra(freq[string[i].toUpperCase()] || freq[string[i].toLowerCase()])
-        decifra(string[i], freqOrder).toLowerCase()
-      );
-    } else {
-      newString = newString.concat(string[i]);
+  Object.keys(freqOrder).map((value, index) => {
+    let t = value.toUpperCase().charCodeAt(0) - teste[index].charCodeAt(0);
+
+    freqKey[t] = freqKey[t] + 1 || 1;
+  });
+
+  var freqAux = 0;
+  Object.keys(freqKey).map((value) => {
+    if (parseInt(freqKey[value]) > freqAux) {
+      freqAux = parseInt(freqKey[value]);
+      key = parseInt(value) < 0 ? parseInt(value) * -1 : parseInt(value);
     }
-  }
+  });
 
-  process.stdout.write(newString);
-  console.log(freqOrder);
-
-  // Object.values(freq).map((value) => {
-  //   for (const key in frequenciaTranslator) {
-  //     if (parseFloat(value) >= parseFloat(key)) {
-  //       newString = newString.concat(frequenciaTranslator[key]);
-  //       return;
-  //     }
-  //   }
-  //   // Object.keys(frequenciaTranslator).map((valueT) => {
-  //   //   if (parseFloat(value) >= parseFloat(valueT)) {
-  //   //     newString = newString.concat(frequenciaTranslator[valueT]);
-  //   //     return;
-  //   //   }
-  //   // });
-  // });
-
-  // console.log(newString);
+  decifrar(key, string);
+  console.log(freqKey);
 };
 
 const init = () => {
