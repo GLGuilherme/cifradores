@@ -1,5 +1,3 @@
-// var frequenciaTranslator = require("./frequenciaTranslator");
-
 var readline = require("readline");
 
 var rl = readline.createInterface({
@@ -8,7 +6,7 @@ var rl = readline.createInterface({
   terminal: false,
 });
 
-const teste = [
+const freqPtBr = [
   "A",
   "E",
   "O",
@@ -71,7 +69,6 @@ const calcFreq = (string) => {
   var key = 0;
 
   let count = 0;
-
   for (let i = 0; i < string.length; i++) {
     if (!deletedChar.includes(string[i])) {
       deletedChar.push(string[i].toUpperCase());
@@ -88,7 +85,7 @@ const calcFreq = (string) => {
           }
         }
         freq[string[i]] = parseFloat(
-          (count * 100) / string.replace(" ", "").length
+          (count * 100) / string.replace(/\d\s/, "").length
         ).toFixed(2);
         count = 0;
       }
@@ -100,9 +97,8 @@ const calcFreq = (string) => {
     .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
 
   Object.keys(freqOrder).map((value, index) => {
-    let t = value.toUpperCase().charCodeAt(0) - teste[index].charCodeAt(0);
-
-    freqKey[t] = freqKey[t] + 1 || 1;
+    let key = value.toUpperCase().charCodeAt(0) - freqPtBr[index].charCodeAt(0);
+    freqKey[key] = freqKey[key] + 1 || 1;
   });
 
   var freqAux = 0;

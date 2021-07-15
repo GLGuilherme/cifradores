@@ -1,17 +1,19 @@
-Os softwares estao tornando-se mais evoluidos e complexos, entao, os engenheiros de software estao enfrentando problemas para conseguir encontrar as solucoes perfeitas para resolver algum problema, ou ate mesmo as solucoes mais adequadas. Isso ocorre devido a fatores como a complexidade do software. Mas um dos fatores mais preocupantes e a imprecisao de especificacao e priorizacao de requisitos. A SBSE, entao, utilizada pela primeira vez por Harman e Jones (\citeyear{harman2001search}), tem como objetivo observar os prolemas na area de ES e propor a utilizacao de tecnicas baseadas em busca e metaheuristicas para a resolucao de problemas em tal area. O termo "\textit{search}", em SBSE, e utilizado para se referir as tecnicas metaheuristicas de Otimizacao Baseada em Busca, do ingles \textit{Search-Based Optimization} (SBO). A SBSE busca reformular os problemas de ES como problemas de SBO. Problemas de busca, sao problemas em que solucoes otimas ou quase otimas sao procuradas em um espacos de solucoes candidatas, guiadas por uma funcao de aptidao que faz a distincao entre solucoes melhores e piores \cite{harman2012search}. Esses problemas de otimizacao sao resolvidos por meio de algoritmos de busca, que utilizam um problema como entrada e podem retornar a melhor solucao para tal problema. Para a busca da melhor solucao, uma funcao objetivo e utilizada para guiar a comparacao entre duas solucoes candidatas e retornar qual e a melhor entre elas. O que sao algoritmos de busca e metaheuristicas Segundo Pearl (\citeyear{pearl1984heuristics}) e Zbigniew e Fogel (\citeyear{michalewicz2013solve}), heuristicas sao criterios, metodos ou principios para decidir qual curso de acao alternativo promete ser o mais eficaz para atingir um objetivo. Tais heuristicas fazem parte de um algoritmo de otimizacao que utiliza informacoes coletadas atualmente por tal algoritmo para facilitar a decisao de qual solucao candidata deve ser testada a seguir. Nesse contexto, metaheuristicas sao metodos para resolver classes de problemas gerais, combinando funcoes objetivas e heuristicas de forma abstrata, sem utilizar uma visao muito profunda da sua estrutura. Elas nao garantem que solucoes otimas sempre serao encontradas em todas as instancias, porem, encontram solucoes quase otimas para muitos casos. Geralmente, metaheuristicas sao utilizadas em problemas que nao podem ser resolvidos com algoritmos convencionais, sendo que muitos desses problemas enquadram-se em problemas de busca e otimizacao.
-Chave: 8{
+O Algoritmo Genético (AG) foi proposto por \citeonline{Holland:1975} na Universidade de Michigan. Com o intuito de formalizar um algoritmo, o princípio da pesquisa era fundamentar-se em processos de evolução das espécies e aplicar seus conceitos como, genes, cromossomos, seleção, cruzamento e mutação, para resolver problemas complexos com um amplo espaço de busca. A evolução é um dos princípios fundamentais para um AG e tal princípio possibilita a modificação de uma população de indivíduos (soluções candidatas) até que seja apresentada uma melhor solução. No AG, os indivíduos menos capacitados tendem a ser eliminados da população, enquanto os mais capacitados, possuem maiores chances de sobrevivência e maior possibilidade de reprodução (novas soluções). Por outra forma, para resolver problemas de otimização o AG utiliza os mecanismos da evolução natural das espécies. Os cromossomos em AG, exemplificados na Figura \ref{fig:chromosome}, são a representação das soluções candidatas, onde cada cromossomo pode ser explicado como um vetor de genes. Cada gene é responsável por possuir uma informação, seja ela um número, vetor ou palavra. Quanto a resolução do problema, uma população é representada por um conjunto de cromossomos.
+Chave: 0{
+  '0': 6,
+  '1': 1,
+  '3': 1,
+  '4': 1,
   '6': 1,
-  '7': 1,
-  '8': 6,
   '9': 1,
-  '10': 1,
-  '13': 1,
-  '17': 2,
-  '-18': 4,
-  '-12': 2,
-  '-2': 2,
-  '-8': 1,
-  '-9': 1,
+  '14': 2,
+  '20': 1,
+  '-4': 1,
+  '-10': 1,
+  '-9': 2,
   '-1': 1,
-  '-5': 1
+  '-7': 1,
+  '-2': 1,
+  '-15': 1,
+  '-14': 1
 }
