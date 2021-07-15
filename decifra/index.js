@@ -110,7 +110,6 @@ const calcFreq = (string) => {
   });
 
   decifrar(key, string);
-  console.log(freqKey);
 };
 
 const init = () => {
