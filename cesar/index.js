@@ -1,11 +1,3 @@
-var readline = require("readline");
-
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false,
-});
-
 const cifrar = (key, string) => {
   let newString = "";
 
@@ -56,23 +48,27 @@ const decifrar = (key, string) => {
 
 const init = () => {
   if (process.argv[2] === "cesar") {
-    rl.on("line", (data) => {
-      if (process.argv[3] === "-c") {
-        if (process.argv[4] === "-k") {
+    if (process.argv[3] === "-c") {
+      if (process.argv[4] === "-k") {
+        process.stdin.on("data", (data) => {
           cifrar(
             parseInt(process.argv[5]),
-            data.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            data
+              .toString()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
           );
-        }
+        });
       }
+    }
 
-      if (process.argv[3] === "-d") {
-        if (process.argv[4] === "-k") {
-          decifrar(-parseInt(process.argv[5]), data);
-        }
+    if (process.argv[3] === "-d") {
+      if (process.argv[4] === "-k") {
+        process.stdin.on("data", (data) => {
+          decifrar(-parseInt(process.argv[5]), data.toString());
+        });
       }
-      rl.close();
-    });
+    }
   }
 };
 

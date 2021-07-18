@@ -1,11 +1,3 @@
-var readline = require("readline");
-
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false,
-});
-
 const freqPtBr = [
   "A",
   "E",
@@ -114,9 +106,8 @@ const calcFreq = (string) => {
 
 const init = () => {
   if (process.argv[2] === "decifra") {
-    rl.on("line", (data) => {
-      calcFreq(data);
-      rl.close();
+    process.stdin.on("data", (data) => {
+      calcFreq(data.toString());
     });
   }
 };

@@ -1,1 +1,31 @@
-O Algoritmo Genético (AG) foi proposto por \citeonline{Holland:1975} na Universidade de Michigan. Com o intuito de formalizar um algoritmo, o princípio da pesquisa era fundamentar-se em processos de evolução das espécies e aplicar seus conceitos como, genes, cromossomos, seleção, cruzamento e mutação, para resolver problemas complexos com um amplo espaço de busca. A evolução é um dos princípios fundamentais para um AG e tal princípio possibilita a modificação de uma população de indivíduos (soluções candidatas) até que seja apresentada uma melhor solução. No AG, os indivíduos menos capacitados tendem a ser eliminados da população, enquanto os mais capacitados, possuem maiores chances de sobrevivência e maior possibilidade de reprodução (novas soluções). Por outra forma, para resolver problemas de otimização o AG utiliza os mecanismos da evolução natural das espécies. Os cromossomos em AG, exemplificados na Figura \ref{fig:chromosome}, são a representação das soluções candidatas, onde cada cromossomo pode ser explicado como um vetor de genes. Cada gene é responsável por possuir uma informação, seja ela um número, vetor ou palavra. Quanto a resolução do problema, uma população é representada por um conjunto de cromossomos.
+Wa awnbeizma mabiw bwzvivlw-am uiqa mdwtcqlwa m kwuxtmfwa, mvbiw, wa mvomvpmqzwa lm awnbeizm mabiw mvnzmvbivlw xzwjtmuia 
+xizi kwvamocqz mvkwvbziz ia awtckwma xmznmqbia xizi zmawtdmz itocu xzwjtmui, wc ibm umauw ia awtckwma uiqa ilmycilia. 
+Qaaw wkwzzm lmdqlw i nibwzma kwuw i kwuxtmfqlilm lw awnbeizm. Uia cu lwa nibwzma uiqa xzmwkcxivbma m i quxzmkqaiw lm 
+maxmkqnqkikiw m xzqwzqhikiw lm zmycqaqbwa. I AJAM, mvbiw, cbqtqhili xmti xzqumqzi dmh xwz Pizuiv m Rwvma (\kqbmgmiz{pizuiv0889amizkp}), 
+bmu kwuw wjrmbqdw wjamzdiz wa xzwtmuia vi izmi lm MA m xzwxwz i cbqtqhikiw lm bmkvqkia jiamilia mu jcaki m umbipmczqabqkia xizi i 
+zmawtckiw lm xzwjtmuia mu bit izmi. W bmzuw "\bmfbqb{amizkp}", mu AJAM, m cbqtqhilw xizi am zmnmzqz ia bmkvqkia umbipmczqabqkia lm 
+Wbquqhikiw Jiamili mu Jcaki, lw qvotma \bmfbqb{Amizkp-Jiaml Wxbquqhibqwv} (AJW). I AJAM jcaki zmnwzuctiz wa xzwjtmuia lm MA kwuw 
+xzwjtmuia lm AJW. Xzwjtmuia lm jcaki, aiw xzwjtmuia mu ycm awtckwma wbquia wc yciam wbquia aiw xzwkczilia mu cu maxikwa lm awtckwma 
+kivlqlibia, ocqilia xwz cui ncvkiw lm ixbqliw ycm nih i lqabqvkiw mvbzm awtckwma umtpwzma m xqwzma \kqbm{pizuiv0890amizkp}. 
+Maama xzwjtmuia lm wbquqhikiw aiw zmawtdqlwa xwz umqw lm itowzqbuwa lm jcaki, ycm cbqtqhiu cu xzwjtmui kwuw mvbzili m xwlmu zmbwzviz i 
+umtpwz awtckiw xizi bit xzwjtmui. Xizi i jcaki li umtpwz awtckiw, cui ncvkiw wjrmbqdw m cbqtqhili xizi ocqiz i kwuxizikiw mvbzm lcia 
+awtckwma kivlqlibia m zmbwzviz ycit m i umtpwz mvbzm mtia. W ycm aiw itowzqbuwa lm jcaki m umbipmczqabqkia Amocvlw Xmizt 
+(\kqbmgmiz{xmizt9762pmczqabqka}) m Hjqovqme m Nwomt (\kqbmgmiz{uqkpitmeqkh0891awtdm}), pmczqabqkia aiw kzqbmzqwa, umbwlwa wc 
+xzqvkqxqwa xizi lmkqlqz ycit kczaw lm ikiw itbmzvibqdw xzwumbm amz w uiqa mnqkih xizi ibqvoqz cu wjrmbqdw. Biqa pmczqabqkia 
+nihmu xizbm lm cu itowzqbuw lm wbquqhikiw ycm cbqtqhi qvnwzuikwma kwtmbilia ibcitumvbm xwz bit itowzqbuw xizi nikqtqbiz i 
+lmkqaiw lm ycit awtckiw kivlqlibi lmdm amz bmabili i amocqz. Vmaam kwvbmfbw, umbipmczqabqkia aiw umbwlwa xizi zmawtdmz ktiaama lm 
+xzwjtmuia omziqa, kwujqvivlw ncvkwma wjrmbqdia m pmczqabqkia lm nwzui ijabzibi, amu cbqtqhiz cui dqaiw ucqbw xzwncvli li aci mabzcbczi. 
+Mtia viw oizivbmu ycm awtckwma wbquia amuxzm amziw mvkwvbzilia mu bwlia ia qvabivkqia, xwzmu, mvkwvbziu awtckwma yciam wbquia 
+xizi ucqbwa kiawa. Omzitumvbm, umbipmczqabqkia aiw cbqtqhilia mu xzwjtmuia ycm viw xwlmu amz zmawtdqlwa kwu itowzqbuwa kwvdmvkqwviqa, 
+amvlw ycm ucqbwa lmaama xzwjtmuia mvycilziu-am mu xzwjtmuia lm jcaki m wbquqhikiw.
+W Itowzqbuw Omvmbqkw (IO) nwq xzwxwabw xwz \kqbmwvtqvm{Pwttivl:9753} vi Cvqdmzaqlilm lm Uqkpqoiv. 
+Kwu w qvbcqbw lm nwzuitqhiz cu itowzqbuw, w xzqvkqxqw li xmaycqai mzi ncvliumvbiz-am mu xzwkmaawa lm mdwtckiw 
+lia maxmkqma m ixtqkiz amca kwvkmqbwa kwuw, omvma, kzwuwaawuwa, amtmkiw, 
+kzchiumvbw m ucbikiw, xizi zmawtdmz xzwjtmuia kwuxtmfwa kwu cu iuxtw maxikw lm jcaki. 
+I mdwtckiw m cu lwa xzqvkqxqwa ncvliumvbiqa xizi cu IO m bit xzqvkqxqw xwaaqjqtqbi i uwlqnqkikiw lm cui xwxctikiw lm 
+qvlqdqlcwa (awtckwma kivlqlibia) ibm ycm amri ixzmamvbili cui umtpwz awtckiw. Vw IO, wa qvlqdqlcwa umvwa kixikqbilwa bmvlmu i 
+amz mtquqvilwa li xwxctikiw, mvycivbw wa uiqa kixikqbilwa, xwaacmu uiqwzma kpivkma lm awjzmdqdmvkqi m uiqwz xwaaqjqtqlilm 
+lm zmxzwlckiw (vwdia awtckwma). Xwz wcbzi nwzui, xizi zmawtdmz xzwjtmuia lm wbquqhikiw w IO cbqtqhi wa umkivqauwa li 
+mdwtckiw vibczit lia maxmkqma. Wa kzwuwaawuwa mu IO, mfmuxtqnqkilwa vi Nqoczi \zmn{nqo:kpzwuwawum}, aiw i zmxzmamvbikiw lia awtckwma 
+kivlqlibia, wvlm kili kzwuwaawuw xwlm amz mfxtqkilw kwuw cu dmbwz lm omvma. Kili omvm m zmaxwvaidmt xwz xwaacqz cui qvnwzuikiw, 
+amri mti cu vcumzw, dmbwz wc xitidzi. Ycivbw i zmawtckiw lw xzwjtmui, cui xwxctikiw m zmxzmamvbili xwz cu kwvrcvbw lm kzwuwaawuwa.
